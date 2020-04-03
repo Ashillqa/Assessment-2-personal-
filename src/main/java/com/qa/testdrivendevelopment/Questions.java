@@ -60,7 +60,16 @@ public class Questions {
 	 * zipped("return","letter") → "rleettutrenr" <br>
 	 */
 	public String zipped(String input1, String input2) {
-		return "";
+		String [] s1 = input1.split("");
+		String [] s2 = input2.split("");
+		String res = "";
+		
+		for (int i =0;i<s1.length;i++) {
+			res+=((s1[i]+s2[i]));
+		}
+		
+		
+		return res;
 	}
 
 	
