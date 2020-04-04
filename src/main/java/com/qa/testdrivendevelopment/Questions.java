@@ -1,5 +1,8 @@
 package com.qa.testdrivendevelopment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Questions {
 	/**
 	 * EXAMPLE: THIS ONE HAS BEEN DONE FOR YOU <br>
@@ -60,6 +63,7 @@ public class Questions {
 	 * zipped("return","letter") → "rleettutrenr" <br>
 	 */
 	public String zipped(String input1, String input2) {
+		
 		String [] s1 = input1.split("");
 		String [] s2 = input2.split("");
 		String res = "";
@@ -70,6 +74,7 @@ public class Questions {
 		
 		
 		return res;
+		
 	}
 
 	
@@ -84,8 +89,27 @@ public class Questions {
 	 * removeDuplicates({"Dog","DoG","Cat"}) → {"Dog","DoG","Cat"} 
 	 */
 	public String[] removeDuplicates(String[] stringArray) {
-		return null;
+		
+		
+		List<String> y = new ArrayList<>();
+		
+		for(int i=0;i<stringArray.length;i++) {
+			if(!(y.contains(stringArray[i])))
+			y.add(stringArray[i]);
+		}
+		
+		String nonDuplicate = "";
+		for(int i=0;i<y.size();i++) {
+			nonDuplicate+=y.get(i)+" ";
+		}
+		
+		String [] result = nonDuplicate.split(" ");
+		
+		return result;
+		
 	}
+
+
 
 	/**
 	 * Given a large string that represents a csv (comma separated values), the structure of each record will be as follows:
