@@ -129,8 +129,24 @@ public class Questions {
 	 * csvScan("Bert,private.key,True,1447\nBert,public.key,False,1318\nJeff,private.key,False,1445") → {"Bert","Jeff"}
 	 */
 	public String[] csvScan(String csvInput) {
-		return null;
+		
+	String [] s1 = csvInput.replace("\n", ",").split(",");
+	String names = "";
+		
+	for(int i=2;i<s1.length;i+=4) {
+		if(s1[i].equals("False")) {
+			if(!(names.contains(s1[i-2]))) {
+				names+=s1[i-2]+" ";
+				}
+		}
+		}
+		
+		String[] result = names.split(" ");
+		return result;
 	}
+
+		
+	
 
 	
 	/**
